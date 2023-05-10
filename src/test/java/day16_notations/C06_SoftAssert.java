@@ -23,6 +23,14 @@ public class C06_SoftAssert extends TestBase {
         bitiş  satırına geldiğinde bize bulduğu tüm hataları rapor eder.
 
         Softassert başlangıcı obje oluşturmaktır.
+
+         ***Soft Assert***(Verification)
+        SoftAssert doğrulama (verification) olarak da bilinir. softAssertion kullandığımızda,assert FAILED olsa bile
+        test methodunun istediğimiz kısmını durdurmaz ve yürümeye devam eder. if-else statementda olduğu gibi.
+
+        Test methodunun istediğiimiz bölümde yapılan tüm testleri raporlar.
+        Eğer assertionlardan FAILED olan varsa raporlama yapılan satırdan sonrasını çalıştırmaz.
+        (assertAll() a kadar çalıştırır assertAll() dan sonrasını çalıştırmaz)
     */
 
     @Test
@@ -34,18 +42,23 @@ public class C06_SoftAssert extends TestBase {
 
         String expectedTitle = "amazon";
         String actualTitle = driver.getTitle();
-        Assert.assertTrue(actualTitle.contains(expectedTitle));
+        softAssert.assertTrue(actualTitle.contains(expectedTitle),"title amazon içermiyor");
 
         WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
-        Assert.assertTrue(aramaKutusu.isEnabled());
+        softAssert.assertTrue(aramaKutusu.isEnabled(),"arama kutusuna erişilemiyor");
 
         aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
 
         WebElement sonucYazisiElementi = driver.findElement(By.xpath("//h1[@class='a-size-base s-desktop-toolbar a-text-normal']"));
-        Assert.assertTrue(sonucYazisiElementi.isDisplayed());
+        softAssert.assertTrue(sonucYazisiElementi.isDisplayed(),"arama yapılamadı");
 
-        Assert.assertTrue(sonucYazisiElementi.getText().contains("Kutella"));
+        softAssert.assertTrue(sonucYazisiElementi.getText().contains("Kutella"),"sonuç yazısı Kutella içermiyor");
 
 
+        //Softassert'e bitiş satırını söylemek için assertAll() kullanılır. Failed olan olursa assertion yaptığımız metodun sonuna yazdığımız mesajı bize
+        //konsolda verir. Bu satır yazılmazsa assertion görevi yapılmamış olur.
+        softAssert.assertAll();
+
+        System.out.println("assertion'lardan fail olan olursa,burası çalışmaz ");//tüm assertionlar çalışırsa bu yazıyı yazıdırır
     }
 }
