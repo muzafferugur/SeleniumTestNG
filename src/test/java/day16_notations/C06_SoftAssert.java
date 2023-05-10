@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import utilities.TestBase;
 
-public class C05_Assertions extends TestBase {
+public class C06_SoftAssert extends TestBase {
     /*
     1-amazon anasayfaya gidin
     2-title in Amazon içerdigini test edin
