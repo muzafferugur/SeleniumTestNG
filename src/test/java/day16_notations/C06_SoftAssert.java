@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import utilities.TestBase;
 
 public class C06_SoftAssert extends TestBase {
@@ -15,10 +16,19 @@ public class C06_SoftAssert extends TestBase {
     4-arama kutusuna Nutella yazıp aratın
     5-arama yapıldıgını test edin
     6-arama sonucunun Nutella içerdigini test edin
-
      */
+
+    /*
+        SoftAssert başlangıç ve bitiş satırları arasındaki tüm assertion'ları yapıp
+        bitiş  satırına geldiğinde bize bulduğu tüm hataları rapor eder.
+
+        Softassert başlangıcı obje oluşturmaktır.
+    */
+
     @Test
     public void test01() {
+
+        SoftAssert softAssert=new SoftAssert();
 
         driver.get("https://www.amazon.com");
 
