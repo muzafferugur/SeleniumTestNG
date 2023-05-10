@@ -14,6 +14,11 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class C04_DependsOnMethods {
+    /*
+    DependsOnMethods testt methodlarının çalışma sıralamasına karışmaz
+    Sadece bağlı olan test, bağlandığı testin sonucuna bakar. Bağlandığı tset PASSED
+    olmazsa bağlanan test hiç çalışmaz(ignore)
+     */
     WebDriver driver;
 
     @BeforeClass
@@ -47,5 +52,8 @@ public class C04_DependsOnMethods {
         WebElement sonucYazisiElementi = driver.findElement(By.xpath("//h1[@class='a-size-base s-desktop-toolbar a-text-normal']"));
         Assert.assertTrue(sonucYazisiElementi.getText().contains("Nutella"));
 
+    }
+    public void test04(){
+        System.out.println("bak bu calıştı");
     }
 }
