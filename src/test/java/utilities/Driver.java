@@ -28,7 +28,11 @@ public class Driver {
 
     public static void closeDriver() {
 
-        driver.close();
+        if (driver != null) {//drivera değer atanmışsa demek
+            driver.close();
+            driver=null;
+        }
+
 
     }
 }
