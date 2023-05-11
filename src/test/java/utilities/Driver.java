@@ -13,7 +13,7 @@ public class Driver {
     driverın kapatılması tercih edilmiştir.
      */
 
-    static WebDriver driver;
+    public static WebDriver driver;
 
     public static WebDriver getDriver() {
 
@@ -30,7 +30,7 @@ public class Driver {
 
         if (driver != null) {//drivera değer atanmışsa demek
             driver.close();
-            driver=null;
+            driver = null;
         }
 
 
