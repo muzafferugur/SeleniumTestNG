@@ -1,5 +1,11 @@
 package utilities;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.time.Duration;
+
 public class Driver {
     /*
     POM'de Driver için TestBase Classına extend etmek yerine  Driver classından
@@ -7,11 +13,21 @@ public class Driver {
     driverın kapatılması tercih edilmiştir.
      */
 
-    public static void getDriver() {
+    static WebDriver driver;
 
+    public static WebDriver getDriver() {
+
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
+
+        return driver;
     }
 
     public static void closeDriver() {
+
+        driver.close();
 
     }
 }
