@@ -1,0 +1,25 @@
+1. POM: Page object model java OOP konsept ile seleniumu birleştiren, testlerimizi daha hızlı
+dahah anlaşılır, reusable ve easy maintable özelliklerine sahip popüler bir framework dizayn modelidir.
+
+2.Temel hedef test methodlarında elle girilen hiç bir değer olmamasıdır.(url,locate veya testdata)
+
+3.Temelde projemizde 3 packagebulunur:
+ı.Pages: Locate işlemlerini ve reusable login methodu gibi sıradan methodları koyarız.
+ıı.Utilities: Projemiz için gerekli extra kaynaklar(Alet - edevat)
+ııı.Tests: Bütün testlerimiz
+
+4.Pages paketinde kullandığımız her bir page için ayrı bir page classı olur.Eğer test ettiğimiz page de çok fazla özellik varsa
+her bir epic için ayrı page classı oluşturabiliriz.
+Her page sayfası oluşturduğumuzda ilk yapmamız gereken parametresiz constructor oluşturup, constructor
+içinde pageFactory classından initElement() kullanıp, Driver classındaki getDriver()'ın getireceği driver'ın bu class(this)
+geçerli olacağını tanımlamaktır.
+
+Page sayfalarını bugüne kadar locate için kullandığımız findElement() veya findElements() yerine @FindBy notasyonu
+kullanılır.Değişen ikinci satır olur.
+
+ Public WebElement aElementi olurken diğerinde public List<WebElement> aElementleriListesi
+
+ 5.Driver classı oluşturup bize driver döndürecek getDriver() ve driverı kapatacak closeDriver() methodlarını oluşturduk.
+ Bu iki methoda da her yeden kolayca erişebilmek için methodları static olarak tanımladık.
+
+
