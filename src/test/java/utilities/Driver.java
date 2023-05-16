@@ -3,6 +3,7 @@ package utilities;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
@@ -22,9 +23,10 @@ public class Driver {
         if (driver == null) {
             switch (ConfigReader.getProperty("browser")) {
 
-                case "chrome":
+
+                case "headless-chrome":
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
+                    driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
                     break;
 
                 case "safari":
@@ -57,7 +59,5 @@ public class Driver {
             driver.close();
             driver = null;
         }
-
-
     }
 }
