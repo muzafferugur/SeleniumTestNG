@@ -3,7 +3,7 @@ dahah anlaşılır, reusable ve easy maintable özelliklerine sahip popüler bir
 
 2.Temel hedef test methodlarında elle girilen hiç bir değer olmamasıdır.(url,locate veya testdata)
 
-3.Temelde projemizde 3 packagebulunur:
+3.Temelde projemizde 3 package bulunur:
 ı.Pages: Locate işlemlerini ve reusable login methodu gibi sıradan methodları koyarız.
 ıı.Utilities: Projemiz için gerekli extra kaynaklar(Alet - edevat)
 ııı.Tests: Bütün testlerimiz
