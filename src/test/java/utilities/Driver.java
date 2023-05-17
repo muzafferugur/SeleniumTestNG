@@ -20,9 +20,13 @@ public class Driver {
 
     Singleton pattern : Tekli kullanım, bir classın farklı classlardan obje oluşturularak kullanımını
     engellemek için kullanılır.
+
+    Bunu sağlamak için yapmamız gereken şey oldukça basit obje oluşturmak için kullanılan
+    constructoru private yaptığınızda baska classlarda Driver classından obje oluşturulması
+    mümkün OLAMAZ.
      */
 
-    public Driver() {
+    private Driver() {
 
     }
 
