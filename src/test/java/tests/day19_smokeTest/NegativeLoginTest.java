@@ -1,5 +1,6 @@
 package tests.day19_smokeTest;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.BrcPage;
 import utilities.ConfigReader;
@@ -14,7 +15,7 @@ public class NegativeLoginTest {
     3.user email : customer@bluerentalcars.com
         password : 54321
         login butonuna tıklayın
-       değerleri girildiğinde sayfaya başarılı bir şekilde giriş yap
+       değerleri girildiğinde sayfaya başarılı bir şekilde girilemediğini test et
      */
     @Test
     public void yanlisSifre() {
@@ -28,5 +29,8 @@ public class NegativeLoginTest {
         brcPage.passwordTextBox.sendKeys(ConfigReader.getProperty("brcWrongPassword"));
 
         brcPage.ikinciLoginButonu.click();
+
+        Assert.assertTrue(brcPage.ikinciLoginButonu.isDisplayed());
     }
+
 }
