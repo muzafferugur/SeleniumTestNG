@@ -13,14 +13,17 @@ public class BrcPage {
     @FindBy(xpath = "//a[@class='btn btn-primary btn-sm']")
     public WebElement ilkLoginButonu;
 
-    @FindBy(xpath = "(//input[@class='form-control is-invalid'])[1]")
+    @FindBy(xpath = "//input[@name='email']")
     public WebElement emailTextBox;
 
-    @FindBy(xpath = "(//input[@class='form-control is-invalid'])[2]")
+    @FindBy(xpath = "//input[@name='password']")
     public WebElement passwordTextBox;
 
-    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    @FindBy(xpath = "//button[@type='submit']")
     public WebElement ikinciLoginButonu;
+
+    @FindBy(id = "dropdown-basic-button")
+    public WebElement kullaniciProfilIsmi;
 
 
 }

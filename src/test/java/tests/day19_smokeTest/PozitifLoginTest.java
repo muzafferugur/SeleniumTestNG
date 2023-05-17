@@ -1,5 +1,6 @@
 package tests.day19_smokeTest;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.BrcPage;
 import utilities.ConfigReader;
@@ -30,7 +31,11 @@ public class PozitifLoginTest {
 
         brcPage.ikinciLoginButonu.click();
 
+        String actualUsername=brcPage.kullaniciProfilIsmi.getText();
+        String expectedUsername=ConfigReader.getProperty("brcValidUsername");
+        Assert.assertEquals(actualUsername, expectedUsername);
 
+        Driver.closeDriver();
 
     }
 }
