@@ -1,0 +1,28 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="istenen methodlar">
+    <!--
+     Bir class'da tüm test methodlari çalışacaksa bunun için direkt class seçmek
+     yeterlidir. Method seçmemizin temel amacı  class içerisinde sadece belirlenen methodların çalışması
+     veya belirlenen methodlar dışındaki tüm methodların çalışmasıdır.
+
+     Eğer çalışacak spesifik methodları belirlemek istersek include
+     Çalışmayacak methodları belirlemek istersek exclude
+
+     Eğer methodlar dependsOnMethods ile birbirine bağlanmışsa xml dosyası çalışırken çelişki oluşmaması lazım
+     çelişki durumunda selenium testleri çalıştırmaz.
+    -->
+    <test name="method">
+        <classes>
+            <class name="tests.day16_notations.C03_Priority">
+                <methods>
+                    <include name="test02"></include>
+                </methods>
+            </class>
+            <class name="tests.day16_notations.C04_DependsOnMethods">
+                <methods>
+                    <exclude name="test03"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
