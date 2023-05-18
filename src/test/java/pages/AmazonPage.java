@@ -13,6 +13,6 @@ public class AmazonPage {
     @FindBy(id = "twotabsearchtextbox")
     public WebElement aramaKutusu;
 
-    @FindBy(xpath = "//div[@class='a-section-small a-spacing-top-small']'")
+    @FindBy(xpath = "//div[@class='a-section a-spacing-small a-spacing-top-small']")
     public WebElement aramaSonucElementi;
 }
