@@ -18,9 +18,11 @@ public class NegativeLoginTest {
        değerleri girildiğinde sayfaya başarılı bir şekilde girilemediğini test et
      */
     @Test
-    public void yanlisSifre() {
+    public void yanlisSifre() throws InterruptedException {
 
         Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
+
+        Thread.sleep(1500);
 
         brcPage.ilkLoginButonu.click();
 
