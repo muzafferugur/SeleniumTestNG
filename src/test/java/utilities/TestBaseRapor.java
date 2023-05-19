@@ -39,7 +39,7 @@ public abstract class TestBaseRapor {
         extentReports.setSystemInfo("Environment", "QA");
         extentReports.setSystemInfo("Browser", ConfigReader.getProperty("browser")); // chrome, firefox
         extentReports.setSystemInfo("Automation Engineer", "Muzaffer");
-        extentHtmlReporter.config().setDocumentTitle("Pozitif Login Test");
+        extentHtmlReporter.config().setDocumentTitle("Rapor");
         extentHtmlReporter.config().setReportName("TestNG Reports");
     }
 
