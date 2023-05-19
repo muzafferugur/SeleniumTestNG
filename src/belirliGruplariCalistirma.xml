@@ -19,11 +19,13 @@
     <test name="belirli gruplar">
             <groups>
                 <run>
-                    <include name="grup1"></include>
+                    <exclude name="grup1"></exclude>
+                    <include name="grup2"></include>
                 </run>
             </groups>
         <packages>
             <package name="tests.day16_notations"></package>
+            <package name="tests.day17_pom"></package>
         </packages>
     </test>
 </suite>
