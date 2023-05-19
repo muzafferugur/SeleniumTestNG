@@ -10,10 +10,11 @@ import utilities.TestBaseRapor;
 public class C03_PositiveLoginTestiRaporlu extends TestBaseRapor {
 
     BrcPage brcPage = new BrcPage();
+
     @Test
     public void positiveLoginTest() {
 
-        extentTest=extentReports.createTest("Pozitif Login", "Gecerli username ve sifre ile giris yapabilmeli");
+        extentTest = extentReports.createTest("Pozitif Login", "Gecerli username ve sifre ile giris yapabilmeli");
 
         Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
         extentTest.info("Brc anasayfaya gidildi");
@@ -35,6 +36,6 @@ public class C03_PositiveLoginTestiRaporlu extends TestBaseRapor {
         Assert.assertEquals(actualUsername, expectedUsername);
         extentTest.pass("kullanıcı basarılı sekilde giris yaptı");
 
-        //Driver.closeDriver();
+        Driver.closeDriver();
     }
 }
