@@ -40,7 +40,7 @@ public class C04_DependsOnMethods {
         driver.get("https://www.amazon.com");
     }
 
-    @Test(dependsOnMethods ="test01")
+    @Test(dependsOnMethods = "test01")
     public void test02() {
         WebElement aramaKutusu = driver.findElement(By.id("twotabsearchtextbox"));
         aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
@@ -53,7 +53,9 @@ public class C04_DependsOnMethods {
         Assert.assertTrue(sonucYazisiElementi.getText().contains("Nutella"));
 
     }
-    public void test04(){
+
+    @Test(groups = {"grup1", "grup2"})
+    public void test04() {
         System.out.println("bak bu calıştı");
     }
 }

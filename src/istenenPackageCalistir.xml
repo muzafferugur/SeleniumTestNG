@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="istenen methodlar">
+<suite name="istenen methodlar" verbose="3">
     <!--
      Bir class'da tüm test methodlari çalışacaksa bunun için direkt class seçmek
      yeterlidir. Method seçmemizin temel amacı  class içerisinde sadece belirlenen methodların çalışması
@@ -10,6 +10,10 @@
 
      Eğer methodlar dependsOnMethods ile birbirine bağlanmışsa xml dosyası çalışırken çelişki oluşmaması lazım
      çelişki durumunda selenium testleri çalıştırmaz.
+
+     suite tagının içine yazılacak verbose attribute konsolda çıkan mesajların daha az veya daha çok olmasını belirler
+     1 en az
+     10 en çok
     -->
     <test name="method">
         <classes>

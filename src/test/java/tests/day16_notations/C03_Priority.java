@@ -24,7 +24,7 @@ public class C03_Priority extends TestBase {
         driver.get("https://www.bestbuy.com");
     }
 
-    @Test
+    @Test(groups = "grup1")
     public void techproedTesti() {
         driver.get("https://www.techproeducation.com");
     }
