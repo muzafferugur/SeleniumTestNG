@@ -19,10 +19,10 @@ public class C03_PositiveLoginTestiRaporlu extends TestBaseRapor {
         extentTest.info("Brc anasayfaya gidildi");
 
         brcPage.ilkLoginButonu.click();
-        extentTest.info("Login butonuna tıklandı")
+        extentTest.info("Login butonuna tıklandı");
 
         brcPage.emailTextBox.sendKeys(ConfigReader.getProperty("brcValidEmail"));
-        extentTest.info("Geçerli email yazıldı")
+        extentTest.info("Geçerli email yazıldı");
 
         brcPage.passwordTextBox.sendKeys(ConfigReader.getProperty("brcValidPassword"));
         extentTest.info("Geçerli sifre yazıldı");
@@ -33,8 +33,8 @@ public class C03_PositiveLoginTestiRaporlu extends TestBaseRapor {
         String actualUsername = brcPage.kullaniciProfilIsmi.getText();
         String expectedUsername = ConfigReader.getProperty("brcValidUsername");
         Assert.assertEquals(actualUsername, expectedUsername);
-        extentTest.pass("kullanıcı basarılı sekilde giris yaptı")
+        extentTest.pass("kullanıcı basarılı sekilde giris yaptı");
 
-        Driver.closeDriver();
+        //Driver.closeDriver();
     }
 }
