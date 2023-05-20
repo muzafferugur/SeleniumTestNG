@@ -16,22 +16,8 @@ public class C01_AssertionsCross extends TestBase {
     5-arama yapıldıgını test edin
     6-arama sonucunun Nutella içerdigini test edin
 
-     */
+*/
 
-    /*
-    ***Hard  Assert***
-
-        JUnit 'te öğrendiğimiz assertion ile aynıdır. TestNG'de soft assertion da olduğundan
-        ayrıştırmak için bu isimle kulanılmıştır.
-
-         JUnit'ten bildiğimiz üzere kullanabileceğimiz 3 çeşit hard assertion türü vardır.
-            ı.Assert.assertEquals()
-            ıı.Assert.assertTrue()
-            ııı.Assert.assertFalse()
-
-        Hard assertion her hangi bir assertion FAILED olursa, test method çalışmasını durdurur(ilk assertionda durdurur)
-        ve kalan kodları yürütmez.(stop execution)
-     */
     @Test
     public void test01() {
 
