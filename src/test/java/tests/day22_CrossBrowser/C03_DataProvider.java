@@ -2,12 +2,15 @@ package tests.day22_CrossBrowser;
 
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import pages.AmazonPage;
 import utilities.ConfigReader;
 import utilities.Driver;
 
 public class C03_DataProvider {
+
+
     @Test
     public void test01() {
         AmazonPage amazonPage = new AmazonPage();
@@ -25,13 +28,21 @@ public class C03_DataProvider {
         String actualSonucYazisi = amazonPage.aramaSonucElementi.getText();
         Assert.assertTrue(actualSonucYazisi.contains(expectedKelime));
 
+        Driver.closeDriver();
+
     }
 
-    @Test(dataProvider ="AranacakKelimeler")
+    @DataProvider
+    public static Object[][] AranacakKelimeler() {
+        Object[][] arananKelimeArrayi = {{"Nutella"}, {"Java"}, {"çiğdem"}, {"Netherlands"}};
+        return arananKelimeArrayi;
+    }
+
+    @Test(dataProvider = "AranacakKelimeler")
     /*
     Arayacağımız kelimeleri bir liste gibi tutup bana yollayacak bir veri sağlayıcısı oluşturacağız.
      */
-    public void test02() {
+    public void dataProviderTest(String arananKelime) {
         AmazonPage amazonPage = new AmazonPage();
         Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
 
@@ -40,6 +51,13 @@ public class C03_DataProvider {
         sonuçların aradığımız kelime içerdiğini test edelim.
         sayfayı kapatalım
          */
+        amazonPage.aramaKutusu.sendKeys(arananKelime + Keys.ENTER);
+
+        String expectedKelime = arananKelime;
+        String actualSonucYazisi = amazonPage.aramaSonucElementi.getText();
+        Assert.assertTrue(actualSonucYazisi.contains(expectedKelime));
+
+        Driver.closeDriver();
 
     }
 }
