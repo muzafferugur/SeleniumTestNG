@@ -9,15 +9,16 @@ import org.openqa.selenium.safari.SafariDriver;
 
 import java.time.Duration;
 
-public class CrossBrowser {
+public class CrossDriver {
 
-    private CrossBrowser() {
+    private CrossDriver() {
 
     }
 
     static WebDriver driver;
 
     public static WebDriver getDriver(String browser) {
+        browser = (browser == null) ? ConfigReader.getProperty("browser") : browser;
 
         if (driver == null) {
             switch (browser) {
