@@ -20,15 +20,15 @@ public class NegativeLoginTest {
     @Test
     public void yanlisSifre() throws InterruptedException {
 
-        Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
+        Driver.getDriver().get(ConfigReader.getProperties("brcUrl"));
 
         Thread.sleep(1500);
 
         brcPage.ilkLoginButonu.click();
 
-        brcPage.emailTextBox.sendKeys(ConfigReader.getProperty("brcValidEmail"));
+        brcPage.emailTextBox.sendKeys(ConfigReader.getProperties("brcValidEmail"));
 
-        brcPage.passwordTextBox.sendKeys(ConfigReader.getProperty("brcWrongPassword"));
+        brcPage.passwordTextBox.sendKeys(ConfigReader.getProperties("brcWrongPassword"));
 
         brcPage.ikinciLoginButonu.click();
 

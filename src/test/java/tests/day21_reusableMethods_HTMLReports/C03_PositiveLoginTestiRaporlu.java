@@ -16,23 +16,23 @@ public class C03_PositiveLoginTestiRaporlu extends TestBaseRapor {
 
         extentTest = extentReports.createTest("Pozitif Login", "Gecerli username ve sifre ile giris yapabilmeli");
 
-        Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
+        Driver.getDriver().get(ConfigReader.getProperties("brcUrl"));
         extentTest.info("Brc anasayfaya gidildi");
 
         brcPage.ilkLoginButonu.click();
         extentTest.info("Login butonuna tıklandı");
 
-        brcPage.emailTextBox.sendKeys(ConfigReader.getProperty("brcValidEmail"));
+        brcPage.emailTextBox.sendKeys(ConfigReader.getProperties("brcValidEmail"));
         extentTest.info("Geçerli email yazıldı");
 
-        brcPage.passwordTextBox.sendKeys(ConfigReader.getProperty("brcValidPassword"));
+        brcPage.passwordTextBox.sendKeys(ConfigReader.getProperties("brcValidPassword"));
         extentTest.info("Geçerli sifre yazıldı");
 
         brcPage.ikinciLoginButonu.click();
         extentTest.info("İkinci Login butonuna tıklandı");
 
         String actualUsername = brcPage.kullaniciProfilIsmi.getText();
-        String expectedUsername = ConfigReader.getProperty("brcValidUsername");
+        String expectedUsername = ConfigReader.getProperties("brcValidUsername");
         Assert.assertEquals(actualUsername, expectedUsername);
         extentTest.pass("kullanıcı basarılı sekilde giris yaptı");
 

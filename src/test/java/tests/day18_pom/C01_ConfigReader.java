@@ -8,8 +8,8 @@ public class C01_ConfigReader {
     @Test
     public void test01() {
 
-        Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
-        Driver.getDriver().get(ConfigReader.getProperty("facebookUrl"));
+        Driver.getDriver().get(ConfigReader.getProperties("amazonUrl"));
+        Driver.getDriver().get(ConfigReader.getProperties("facebookUrl"));
 
 
     }

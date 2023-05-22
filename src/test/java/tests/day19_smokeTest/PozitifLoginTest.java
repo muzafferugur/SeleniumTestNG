@@ -21,18 +21,18 @@ public class PozitifLoginTest {
     @Test
     public void positiveLoginTest() {
 
-        Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
+        Driver.getDriver().get(ConfigReader.getProperties("brcUrl"));
 
         brcPage.ilkLoginButonu.click();
 
-        brcPage.emailTextBox.sendKeys(ConfigReader.getProperty("brcValidEmail"));
+        brcPage.emailTextBox.sendKeys(ConfigReader.getProperties("brcValidEmail"));
 
-        brcPage.passwordTextBox.sendKeys(ConfigReader.getProperty("brcValidPassword"));
+        brcPage.passwordTextBox.sendKeys(ConfigReader.getProperties("brcValidPassword"));
 
         brcPage.ikinciLoginButonu.click();
 
         String actualUsername=brcPage.kullaniciProfilIsmi.getText();
-        String expectedUsername=ConfigReader.getProperty("brcValidUsername");
+        String expectedUsername=ConfigReader.getProperties("brcValidUsername");
         Assert.assertEquals(actualUsername, expectedUsername);
 
         Driver.closeDriver();

@@ -19,7 +19,7 @@ public class CrossDriver {
     static WebDriver driver;
 
     public static WebDriver getDriver(String browser) {
-        browser = (browser == null) ? ConfigReader.getProperty("browser") : browser;
+        browser = (browser == null) ? ConfigReader.getProperties("browser") : browser;
 
         if (driver == null) {
             switch (browser) {

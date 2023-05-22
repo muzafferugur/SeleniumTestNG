@@ -36,7 +36,7 @@ public class Driver {
     public static WebDriver getDriver() {
 
         if (driver == null) {
-            switch (ConfigReader.getProperty("browser")) {
+            switch (ConfigReader.getProperties("browser")) {
 
                 case "edge":
                     WebDriverManager.edgedriver().setup();
