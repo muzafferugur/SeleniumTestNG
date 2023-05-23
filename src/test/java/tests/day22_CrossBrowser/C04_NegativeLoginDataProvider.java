@@ -15,7 +15,7 @@ public class C04_NegativeLoginDataProvider {
     public static Object[][] kullaniciListesi() {
 
         Object[][] kullaniciBilgileri ={{"firuze@sennazlibircicek.com", "54678"},
-                                                            {"murat@derdinekederalayina.com","65784"},
+                                                            {"murat@derdinekederalayinagider.com","65784"},
                                                             {"ilyas@merhabaaleyküm.com", "123456"}};
         return kullaniciBilgileri;
     }
