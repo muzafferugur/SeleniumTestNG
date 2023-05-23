@@ -40,7 +40,7 @@ public class C06_SoftAssert extends TestBase {
 
         driver.get("https://www.amazon.com");
 
-        String expectedTitle = "amazon";
+        String expectedTitle = "Amazon";
         String actualTitle = driver.getTitle();
         softAssert.assertTrue(actualTitle.contains(expectedTitle), "title amazon içermiyor");
 
@@ -52,7 +52,7 @@ public class C06_SoftAssert extends TestBase {
         WebElement sonucYazisiElementi = driver.findElement(By.xpath("//h1[@class='a-size-base s-desktop-toolbar a-text-normal']"));
         softAssert.assertTrue(sonucYazisiElementi.isDisplayed(), "arama yapılamadı");
 
-        softAssert.assertTrue(sonucYazisiElementi.getText().contains("Kutella"), "sonuç yazısı Kutella içermiyor");
+        softAssert.assertTrue(sonucYazisiElementi.getText().contains("Nutella"), "sonuç yazısı Kutella içermiyor");
 
 
         //Softassert'e bitiş satırını söylemek için assertAll() kullanılır. Failed olan olursa assertion yaptığımız metodun sonuna yazdığımız mesajı bize
