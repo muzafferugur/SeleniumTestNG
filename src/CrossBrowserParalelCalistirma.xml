@@ -13,3 +13,25 @@
         </classes>
     </test>
 </suite>
+<!--
+=>TestNg’de paralel test xml dosyasi kullanilarak yapilir.
+=> Paralel test calisma suresini azaltir, dolayisiyla zaman kazanmak icin parallel test kullanilir.
+=> Paralel test ayni anda birden fazla test case’i eszamanli olarak calistirmak demektir.
+=> Xml dosyasinda belirlenen testleri belirledigimiz level seviyesinde belirledigimiz thread-count
+sayisinca parallel calistirir
+=>Classes,methods seviyesinde calistirirsak verilen tum gorevler bitene kadar baska class veya
+method varsa calismaya devam eder. Level olarak Tests secilirse testlerin tanimlanmasi
+gereklidir
+=> Cross Browser (Multi Browser) test ise farkli browserlar ile test yapmak demektir.Sirali
+(sequential) veya paralel yapilabilir.
+
+=> Coklu calistirma, Parallel calistirma ve Cross Browser calistirma farkli farkli islemlerdir.
+=> Mesela 5 testi sirali olarak ama topluca calistirirsak
+==>sirali coklu calistirma
+=> 5 testi ayni anda calismaya baslayan iki driver’la calistirirsam
+==> parallel calistirma
+=> 5 testi sirali olarak calistirip, ilk ucunu chrome, son ikisini firefox’da calistirirsam
+==> sirali cros browser
+=> 5 testin ucunu chrome, ikisini firefox ile calistirip, chrome ve firefox’u ayni zamanda calistirirsam
+==> parallel cros browsing test olur
+-->
