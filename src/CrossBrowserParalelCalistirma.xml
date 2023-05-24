@@ -14,6 +14,7 @@
     </test>
 </suite>
 <!--
+*****************TESTNG PARALEL TESTİNG*******************
 =>TestNg’de paralel test xml dosyasi kullanilarak yapilir.
 => Paralel test calisma suresini azaltir, dolayisiyla zaman kazanmak icin parallel test kullanilir.
 => Paralel test ayni anda birden fazla test case’i eszamanli olarak calistirmak demektir.
