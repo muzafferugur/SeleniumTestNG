@@ -7,6 +7,12 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class PozitifLoginTest {
+    /*
+    End to End Test(E2E): Bir uygulamanin tum adimlarini bastan sona kadar test etmek demektir.
+Ornegin biz yonetici bir oda olusturabilir mi diye test yaptigimizda sisteme giristen oda olusturuldu
+yazisi gorulunceye kadar tum adimlari test etmis oluruz, dolayisiyla E2E testi yapmis oluruz. Bu
+testin diger adi da Sistem Testi’dir.
+     */
 
     BrcPage brcPage = new BrcPage();
 
@@ -21,18 +27,18 @@ public class PozitifLoginTest {
     @Test
     public void positiveLoginTest() {
 
-        Driver.getDriver().get(ConfigReader.getProperties("brcUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
 
         brcPage.ilkLoginButonu.click();
 
-        brcPage.emailTextBox.sendKeys(ConfigReader.getProperties("brcValidEmail"));
+        brcPage.emailTextBox.sendKeys(ConfigReader.getProperty("brcValidEmail"));
 
-        brcPage.passwordTextBox.sendKeys(ConfigReader.getProperties("brcValidPassword"));
+        brcPage.passwordTextBox.sendKeys(ConfigReader.getProperty("brcValidPassword"));
 
         brcPage.ikinciLoginButonu.click();
 
         String actualUsername=brcPage.kullaniciProfilIsmi.getText();
-        String expectedUsername=ConfigReader.getProperties("brcValidUsername");
+        String expectedUsername=ConfigReader.getProperty("brcValidUsername");
         Assert.assertEquals(actualUsername, expectedUsername);
 
         Driver.closeDriver();

@@ -20,11 +20,11 @@ public class C02_ConfigReaderKullanimi {
 
         FacebookPage facebookPage = new FacebookPage();
 
-        Driver.getDriver().get(ConfigReader.getProperties("facebookUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("facebookUrl"));
 
-        facebookPage.mailKutusu.sendKeys(ConfigReader.getProperties("fbWrongUsername"));
+        facebookPage.mailKutusu.sendKeys(ConfigReader.getProperty("fbWrongUsername"));
 
-        facebookPage.sifreKutusu.sendKeys(ConfigReader.getProperties("fbWrongPassword"));
+        facebookPage.sifreKutusu.sendKeys(ConfigReader.getProperty("fbWrongPassword"));
 
         facebookPage.loginTusu.click();
 

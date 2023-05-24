@@ -31,7 +31,7 @@ public class C04_NegativeLoginDataProvider {
     @Test(dataProvider = "kullaniciListesi")
     public void yanlisSifre(String userEmail, String password) throws InterruptedException {
 
-        Driver.getDriver().get(ConfigReader.getProperties("brcUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
 
         Thread.sleep(1500);
 

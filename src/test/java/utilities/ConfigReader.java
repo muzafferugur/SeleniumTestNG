@@ -6,6 +6,12 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class ConfigReader {
+    /*
+    ConfigurationReader class test method’larimiz ile Configuration.properties arasinda iletisimi saglar.
+Bu class’da test class’larindan kolayca ulasmak icin static method bulunur. Method static oldugundan method
+icerisinden cagiracagimiz variable da static olmalidir. Kullanacagimiz static variable’a ilk degeri atamak icin(instantiate) de static block
+kullaniriz.
+     */
 
     public static Properties properties;//->obje oluşturduk
 
@@ -25,7 +31,7 @@ public class ConfigReader {
         }
     }
 
-    public static String getProperties(String key) {
+    public static String getProperty(String key) {
 
         /*
         test methodundan yolladığımız string key değerini alıp Properties classından getProperty() methodunu

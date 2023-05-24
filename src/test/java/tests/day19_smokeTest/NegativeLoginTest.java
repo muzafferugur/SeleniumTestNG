@@ -7,6 +7,11 @@ import utilities.ConfigReader;
 import utilities.Driver;
 
 public class NegativeLoginTest {
+    /*
+    Smoke Test: Kullandigimiz uygulamanin onemli/temel fonksiyonlarini test etmek icin yapilir.
+Genellikle sabah ilk ise baslama gorevimizdir. Login,logout,sepete ekle,odeme yap.. gibi temel
+islevleri test ederiz. Eger smoke test FAILED olursa zaman gecirmeksizin tum ekibi haberdar ederiz
+     */
     BrcPage brcPage = new BrcPage();
 
     /*
@@ -20,15 +25,15 @@ public class NegativeLoginTest {
     @Test
     public void yanlisSifre() throws InterruptedException {
 
-        Driver.getDriver().get(ConfigReader.getProperties("brcUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("brcUrl"));
 
         Thread.sleep(1500);
 
         brcPage.ilkLoginButonu.click();
 
-        brcPage.emailTextBox.sendKeys(ConfigReader.getProperties("brcValidEmail"));
+        brcPage.emailTextBox.sendKeys(ConfigReader.getProperty("brcValidEmail"));
 
-        brcPage.passwordTextBox.sendKeys(ConfigReader.getProperties("brcWrongPassword"));
+        brcPage.passwordTextBox.sendKeys(ConfigReader.getProperty("brcWrongPassword"));
 
         brcPage.ikinciLoginButonu.click();
 

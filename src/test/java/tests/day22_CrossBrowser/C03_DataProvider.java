@@ -20,7 +20,7 @@ public class C03_DataProvider {
         sonuçların nutella içerdiğini test edelim
          */
 
-        Driver.getDriver().get(ConfigReader.getProperties("amazonUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
 
         amazonPage.aramaKutusu.sendKeys("Nutella" + Keys.ENTER);
 
@@ -44,7 +44,7 @@ public class C03_DataProvider {
      */
     public void dataProviderTest(String arananKelime) {
         AmazonPage amazonPage = new AmazonPage();
-        Driver.getDriver().get(ConfigReader.getProperties("amazonUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
 
         /*
         Nutella, Java, çiğdem ve Netherlands için arama yapalım

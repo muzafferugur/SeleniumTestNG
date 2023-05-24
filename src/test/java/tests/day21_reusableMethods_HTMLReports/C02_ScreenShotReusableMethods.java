@@ -12,7 +12,7 @@ public class C02_ScreenShotReusableMethods {
     public void test01() throws IOException {
 
         //amazon sayfasına gidip fotoğrafını çekelim
-        Driver.getDriver().get(ConfigReader.getProperties("amazonUrl"));
+        Driver.getDriver().get(ConfigReader.getProperty("amazonUrl"));
         ReusableMethods.getScreenshot("amazon");
         Driver.closeDriver();
 
