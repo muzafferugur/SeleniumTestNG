@@ -17,21 +17,6 @@ public class C02_SoftAssertCross extends TestBase {
     6-arama sonucunun Nutella içerdigini test edin
      */
 
-    /*
-        SoftAssert başlangıç ve bitiş satırları arasındaki tüm assertion'ları yapıp
-        bitiş  satırına geldiğinde bize bulduğu tüm hataları rapor eder.
-
-        Softassert başlangıcı obje oluşturmaktır.
-
-         ***Soft Assert***(Verification)
-        SoftAssert doğrulama (verification) olarak da bilinir. softAssertion kullandığımızda,assert FAILED olsa bile
-        test methodunun istediğimiz kısmını durdurmaz ve yürümeye devam eder. if-else statementda olduğu gibi.
-
-        Test methodunun istediğiimiz bölümde yapılan tüm testleri raporlar.
-        Eğer assertionlardan FAILED olan varsa raporlama yapılan satırdan sonrasını çalıştırmaz.
-        (assertAll() a kadar çalıştırır assertAll() dan sonrasını çalıştırmaz)
-    */
-
     @Test
     public void test01() {
 
